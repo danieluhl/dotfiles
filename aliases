@@ -2,7 +2,7 @@
 # install vim plugins
 alias plug-install='vim -u "$HOME"/.vimrc.bundles +PlugInstall +PlugClean! +qa'
 
-alias dotfiles='code ~/git/dotfiles'
+alias dotfiles='code ~/Dropbox/git/dotfiles'
 alias dot='dotfiles'
 
 alias notes='insiders ~/Dropbox/notes/work'
@@ -24,6 +24,7 @@ alias gwho='git shortlog -n -s --no-merges'
 alias gc='git checkout'
 alias gcb='git checkout -b'
 alias gcbm=checkoutFromMaster
+alias gbm=gcbm
 function checkoutFromMaster() {
  gcb $1 origin/master;
 }
@@ -79,7 +80,10 @@ alias gcl='git clean -fdx'
 # branches
 alias gbd='git branch -D'
 alias gb='printBranches'
-alias gbm='git branch -m' # rename a branch
+# rename a branch
+alias gbn='git branch -m'
+# New branch from master
+
 alias createremote="createRemoteBranch"
 alias deleteremote="deleteRemoteBranch"
 alias pushremote="pushRemoteBranch"
