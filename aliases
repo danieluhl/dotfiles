@@ -17,7 +17,6 @@ alias gprm='git pull --rebase origin master'
 
 # git
 alias reload!='. ~/.zshrc && . ~/.zshrc.local'
-alias rebuild!='rcdn -vd ~/git/dotfiles/dotfiles-1 && rcdn -vd ~/git/dotfiles/dotfiles-local && rcup -vd ~/git/dotfiles/dotfiles-1 && rcup -vd ~/git/dotfiles/dotfiles-local'
 
 alias gwho='git shortlog -n -s --no-merges'
 
