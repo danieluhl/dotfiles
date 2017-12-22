@@ -3,7 +3,9 @@
 alias plug-install='vim -u "$HOME"/.vimrc.bundles +PlugInstall +PlugClean! +qa'
 
 alias dotfiles='code ~/Dropbox/git/dotfiles'
+alias dotfilesold='code /Users/duhl/git/dotfiles'
 alias dot='dotfiles'
+alias reload='source ~/.aliases'
 
 alias notes='insiders ~/Dropbox/notes/work'
 alias c='code .'
@@ -40,10 +42,9 @@ alias gci='git add -A && git commit -n'
 alias gcamend='git add -A && git commit --amend'
 alias gcc='git checkout -- .'
 alias guc='git reset --soft HEAD~1'
-alias grm='git reset HEAD'
 alias gremove='git reset HEAD && git status'
 # get latest master on local master without checking out master
-alias gfm='git fetch origin master:master'
+alias gfm='git fetch --prune origin master:master'
 alias gmm='git merge master --no-edit'
 alias gpm='gfm && gmm'
 alias gpmm='git prune && rm .git/gc.log && gpm'
@@ -58,10 +59,13 @@ alias gpa='git push --no-verify'
 alias gp='rm -f .git/gc.log && git pull'
 alias gpr='git pull --rebase'
 # rebase is saying, "instead of building my features on that old commit, build them all on this new commit"
-alias grm='gf && git rebase origin/master'
-alias gf='git fetch --all'
+alias grm='git fetch origin master:master && git rebase origin/master'
+alias gf='git fetch --all --prune'
 alias gpp='gpr && gpush'
 alias lint='node_modules/.bin/eslint --rulesdir grunt_tasks/eslint/rules'
+alias grc='git rebase --continue'
+# example grone slush_branch (takes one commit and plays it on top of slush branch)
+alias grone='git rebase -i HEAD~1 --onto'
 
 alias gclean='git remote prune origin && git gc && git clean -dfx && git stash clear'
 
@@ -224,3 +228,7 @@ alias localhost='open -a "Google Chrome" "http://localhost:8000"'
 
 # opam (ocaml package manager) init
 alias opamConfig='eval `opam config env`'
+
+
+
+
