@@ -1,7 +1,9 @@
 [push]
   default = current
+[pull]
+ rebase = false
 [color]
-  ui = auto
+	ui = true
 [alias]
   aa = add --all
   ap = add --patch
@@ -14,9 +16,9 @@
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [core]
-  excludesfile = /Users/duhl/.gitignore_global
+  excludesfile = ~/.gitignore
   autocrlf = input
-  editor = "code"
+  editor = code --wait
 [commit]
   template = ~/.gitmessage
 [fetch]
@@ -26,11 +28,17 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-  name = Dan Uhl
-  email = duhl@wayfair.com
+	name = Dan Uhl
+	email = duhl@wayfair.com
 [merge]
   tool = opendiff
 [diff]
     tool = default-difftool
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
+[gc]
+	auto = 0
+[http]
+	sslVerify = false
+[init]
+	defaultBranch = main
